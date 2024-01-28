@@ -1,0 +1,87 @@
+<div class="cui__layout">
+
+    <div class="cui__menuTop">
+        <div class="cui__menuTop__mobileTrigger">
+            <span></span>
+        </div>
+
+        <div class="cui__menuTop__outer">
+            <div class="cui__menuTop__logo__container">
+                <div class="cui__menuTop__logo">
+                    <a href="/">
+                        <img src="{{ get_logo() }}" class="mr-2" alt="{{ config('title') }}" height="35"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cui__menuTop__scroll">
+                <ul class="cui__menuTop__navigation cui__menuTop__navigation--root">
+
+                    <li class="cui__menuTop__item">
+                        <a href="/" class="cui__menuTop__item__link">
+                            <span class="cui__menuTop__item__title">Home</span>
+                            <i class="cui__menuTop__item__icon fa fa-home"></i>
+                        </a>
+                    </li>
+
+                    <li class="cui__menuTop__item">
+                        <a href="{{ '' }}" class="cui__menuTop__item__link">
+                            <span class="cui__menuTop__item__title">Api Document</span>
+                            <i class="cui__menuTop__item__icon fa fa-line-chart"></i>
+                        </a>
+                    </li>
+
+                    <li class="cui__menuTop__item cui__menuTop__submenu">
+                        <span class="cui__menuTop__item__link">
+                            <span class="cui__menuTop__item__title">My Account</span>
+                            <i class="cui__menuTop__item__icon fa fa-user-o"></i>
+                          </span>
+
+                        <ul class="cui__menuTop__navigation">
+                            {% if auth %}
+                            <li class="cui__menuTop__item">
+                                <a href="{{ '' }}" class="cui__menuTop__item__link">
+                                    <span class="cui__menuTop__item__title">@lang('app.dashboard')</span>
+                                    <i class="cui__menuTop__item__icon fa fa-dashboard"></i>
+                                </a>
+                            </li>
+
+                            <li class="cui__menuTop__item">
+                                <a href="{{ '' }}" class="cui__menuTop__item__link" data-turbolinks="false">
+                                    <span class="cui__menuTop__item__title">@lang('app.logout')</span>
+                                    <i class="cui__menuTop__item__icon fa fa-sign-out"></i>
+                                </a>
+                            </li>
+                            {% else %}
+                                    <li class="cui__menuTop__item">
+                                        <a href="{{ url('login') }}" class="cui__menuTop__item__link">
+                                            <span class="cui__menuTop__item__title">Login</span>
+                                            <i class="cui__menuTop__item__icon fa fa-sign-in"></i>
+                                        </a>
+                                    </li>
+
+                                    <li class="cui__menuTop__item">
+                                        <a href="{{ url('register') }}" class="cui__menuTop__item__link">
+                                            <span class="cui__menuTop__item__title">Register</span>
+                                            <i class="cui__menuTop__item__icon fa fa-sign-in"></i>
+                                        </a>
+                                    </li>
+                            {% endif %}
+
+                        </ul>
+                    </li>
+
+                    {#<li class="cui__menuTop__item">
+                        <a target="_blank" href="https://www.facebook.com/103880791497015/" class="cui__menuTop__item__link">
+                            <span class="cui__menuTop__item__title">Fanpage</span>
+                            <i class="cui__menuTop__item__icon fa fa-users"></i>
+                        </a>
+                    </li>#}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="cui__layout">
+
+        <div class="cui__layout__content">
