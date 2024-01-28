@@ -17,5 +17,11 @@
         "primary": {
             "label": "Primary Menu"
         }
+    },
+    "templates": {
+        "home": {
+            "label": "Home",
+            "view": "theme::templates.home"
+        }
     }
 }
